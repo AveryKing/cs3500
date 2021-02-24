@@ -83,7 +83,6 @@ $(function () {
 });
 
 /**
- * qwertyuiopASDFG,JHGEWEDFGHGFRER
- * HGRFGGFREW
- * 
+ * I updated this 5:04pm 2/24 
+ *
  */
