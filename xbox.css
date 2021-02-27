@@ -1,0 +1,49 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+
+/* general text formatting */
+
+h1, h2, h3, nav, footer {
+ font-family: 'Merriweather', serif;
+}
+body {
+   font-family: 'Open Sans', Arial, sans-serif;
+   font-size: 16px;
+}
+
+
+legend {
+   background-color: #616161 ;
+   color: white;
+
+}
+fieldset {
+   margin: 1em auto;
+   background-color: #F5F5F5;
+
+}
+
+div#paintingBox {
+   margin: 0.25em auto;
+   background-color: green;
+   border: 1pt solid #616161;
+
+}
+
+table thead {
+   background-color: white;
+
+}
+
+caption {
+   background-color: green;
+   font-weight: bold;
+
+}
+
+table {
+
+}
+tr {
+
+}
