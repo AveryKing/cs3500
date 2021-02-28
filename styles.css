@@ -16,7 +16,7 @@
     background-size: cover;
     color:white;
     margin: 0 auto;
-    
+
 }
 
 .display-4 {
@@ -29,7 +29,7 @@
     margin: 0 auto;
     display:flex;
 
-    
+
 }
 
 #featured {
@@ -46,8 +46,8 @@
     background-color:#00315B;
     font-size: 1em;
     display:flex;
-  
-    
+
+
 }
 
 .navMobile {
@@ -78,14 +78,14 @@
 
 
 a {
-    
-    
+
+
     border-radius: 25px;
 }
 
 a:hover {
     background-color:#0076DD;
-    
+
 
 }
 
@@ -98,7 +98,7 @@ a:hover {
     justify-content:space-around;
     overflow:auto;
 
-    
+
 }
 
 .container-fluid {
@@ -107,7 +107,7 @@ a:hover {
     padding-right: 10%;
     padding-top:0px;
     margin-top:0;
-  
+
 }
 
 .card:hover {
@@ -118,13 +118,13 @@ a:hover {
 .card {
     margin:10px;
     margin-bottom: 25px;
-    
-    
-    
+
+
+
 }
 
 .imgContainer img {
-   
+
     margin:0;
     width: auto;
     height:auto;
@@ -155,7 +155,7 @@ a:hover {
 }
 
 .modal-dialog {
-   
+
 }
 
 .modal-pic {
@@ -169,9 +169,9 @@ a:hover {
 }
 
 body {
-    animation: fadeEffect 2s; 
+    animation: fadeEffect 2s;
   }
-  
+
   #homeTab {
       animation: fadeEffect 3s;
   }
@@ -195,7 +195,7 @@ body {
       display:flex;
       justify-content: center;
       font-family: Arial, Helvetica, sans-serif;
-      
+
   }
 
 
@@ -221,3 +221,12 @@ body {
     animation: fadeEffect 2s;
 }
 
+#nintendoTab {
+  background-color: red;
+}
+#playStationTab {
+  background-color: blue;
+}
+#xboxTab {
+  background-color: green;
+}
