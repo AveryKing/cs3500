@@ -1,10 +1,29 @@
 $(function () {
+  let currentTab = "homeTab";
+
+  // Fetch current featured products
+  async function displayFeaturedProducts() {
+    let { featuredProducts } = await fetch(
+      "featuredProducts.json"
+    ).then((res) => res.json());
+
+    featuredProducts.forEach(({ productName, featuredPosition, productID }) => {
+      $(`#${featuredPosition}`).text(productName);
+      let buttonName = featuredPosition + "Button";
+      document.getElementById(buttonName).value = productID;
+    });
+  }
+
+  displayFeaturedProducts();
+
   // This function makes navbar stay at top of screen
-  var navbar = document.getElementById("nav");
-  var offset = navbar.offsetTop;
+  let navbar = document.getElementById("nav");
+  let offset = navbar.offsetTop;
+
   window.onscroll = function () {
     fixedNavBar();
   };
+
   function fixedNavBar() {
     if (window.pageYOffset >= offset) {
       navbar.classList.add("fixednav");
@@ -12,7 +31,7 @@ $(function () {
       navbar.classList.remove("fixednav");
     }
   }
-  var b = window.matchMedia("(max-width: 613px)");
+  let b = window.matchMedia("(max-width: 613px)");
   b.addEventListener("change", setNavBarSize);
   if (b.matches) {
     setNavBarSize(b);
@@ -37,52 +56,88 @@ $(function () {
     }
   }
 
-  /***   NAVBAR BUTTONS  */
+  function changeUI(mode) {
+    document.getElementById(currentTab).style.display = "none";
+    switch (mode) {
+      case "homeTab":
+        currentTab = "homeTab";
+        break;
+      case "nintendoTab":
+        currentTab = "nintendoTab";
+        break;
+      case "playStationTab":
+        currentTab = "playStationTab";
+        break;
+      case "xboxTab":
+        currentTab = "xboxTab";
+        break;
+      case "aboutUsTab":
+        currentTab = "aboutUsTab";
+        break;
+      case "contactTab":
+        currentTab = "contactTab";
+        break;
+      case "viewAllProducts":
+        currentTab = "allProducts";
+        break;
+    }
+
+    document.getElementById(currentTab).style.display = "block";
+  }
+
+  /*** BUTTONS  */
 
   $("#homeButton").on("click", function () {
-    document.getElementById("tab4").style.display = "none";
-    document.getElementById("tab2").style.display = "none";
-    document.getElementById("tab3").style.display = "none";
-    document.getElementById("tab1").style.display = "block";
+    changeUI("homeTab");
   });
 
-  $("#productsButton").on("click", function () {
-    document.getElementById("tab4").style.display = "none";
-    document.getElementById("tab1").style.display = "none";
-    document.getElementById("tab3").style.display = "none";
-    document.getElementById("tab2").style.display = "block";
+  $("#nintendoButton").on("click", function () {
+    changeUI("nintendoTab");
   });
 
   $("#aboutUsButton").on("click", function () {
-    document.getElementById("tab4").style.display = "none";
-    document.getElementById("tab3").style.display = "block";
-    document.getElementById("tab2").style.display = "none";
-    document.getElementById("tab1").style.display = "none";
+    changeUI("aboutUsTab");
+  });
+
+  $("#playStationButton").on("click", function () {
+    changeUI("playStationTab");
+  });
+
+  $("#xboxButton").on("click", function () {
+    changeUI("xboxTab");
   });
 
   $("#contactUsButton").on("click", function () {
-    document.getElementById("tab1").style.display = "none";
-    document.getElementById("tab2").style.display = "none";
-    document.getElementById("tab3").style.display = "none";
-    document.getElementById("tab4").style.display = "block";
+    changeUI("contactTab");
   });
 
-  /*** "More Info" Button
-   *  Loads item data from JSON in items.json
-   *  Put the products ID in "value" attribute for more info button.
-   */
+  $("#viewAllProducts").on("click", function () {
+    changeUI("viewAllProducts");
+  });
+
   $(".moreinfo").on("click", function () {
-    var productId = this.value;
-    $("#mbody").load("items.json", function (itemsData) {
-      var itemsObj = JSON.parse(itemsData);
-      $("#mtitle").html(itemsObj.products[productId - 1].productName);
-      $("#mbody").html(itemsObj.products[productId - 1].productDescription);
-    });
-    $("#moreInfoModal").modal("show");
+    let productId = this.value;
+    console.log(productId);
+    showMoreInfo(productId);
   });
-});
 
-/**
- * I updated this 5:04pm 2/24 -- LORAND MEZEI updated
- *
- */
+  async function showMoreInfo(productId) {
+    console.log(productId);
+    let productsJSON = await fetch("items.json").then((res) =>
+      res.json()
+    );
+
+    let productObj = productsJSON.products[productId - 1];
+    let productName = productObj.productName;
+    let system = productObj.system;
+    let price = productObj.price;
+    let image = 'images/' + productObj.image + '.jpg';
+    window.alert
+
+    $("#mtitle").text(productName);
+    $("#mbody").html("Price: " + price + "<br>" + "System: " + system + '<br><center><img width="auto" height="250px" src="' + image + '"' + '</img></center>');
+    $("#moreInfoModal").modal("show");
+  }
+
+ 
+});

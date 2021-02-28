@@ -24,12 +24,16 @@
 }
 
 #logo {
-    width: 115;
+    width: auto;
     height:130px;
     margin: 0 auto;
     display:flex;
 
     
+}
+
+#featured {
+    display: none;
 }
 
 .container {
@@ -63,25 +67,14 @@
 }
 
 
-.fixednavMobile {
-    position: fixed;
-    width: 100%;
-    top:0;
-    z-index: 1;
-}
+
 
 .nav-item {
     padding: 15px;
 
 }
 
-.fixednav {
-    position:fixed;
-    width:100%;
-    top: 0;
-    z-index: 1;
-  
-}
+
 
 
 a {
@@ -139,10 +132,7 @@ a:hover {
 
 }
 
-.imgContainer:hover {
-    
 
-}
 
 #mostpop {
     text-align:center;
@@ -156,12 +146,6 @@ a:hover {
     vertical-align:middle;
     position:absolute;
     top:100px;
-}
-
-#signUpModal {
-
-  
-  
 }
 
 
@@ -188,20 +172,14 @@ body {
     animation: fadeEffect 2s; 
   }
   
-  #tab1 {
+  #homeTab {
       animation: fadeEffect 3s;
   }
 
 
-  #tab2 {
-      display:none;
-      animation: fadeEffect 3s;
-  }
 
-  #tab3 {
-      display: none;
-      animation: fadeEffect 3s;
-  }
+
+
 
   #tab4 {
       display: none;
@@ -224,8 +202,6 @@ body {
 
 
 
-
-
   #staticButtons {
     animation: fadeEffect 2s;
 
@@ -234,3 +210,14 @@ body {
 #menuDropdown {
     animation: fadeEffect 0.5s;
 }
+
+#nintendoTab img, #playStationTab img, #xboxTab img, #allProducts img {
+    height: 50%;
+    width: 50%;
+}
+
+#nintendoTab, #playStationTab, #xboxTab, #allProducts, #aboutUsTab, #contactTab {
+    display: none;
+    animation: fadeEffect 2s;
+}
+

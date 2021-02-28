@@ -1,0 +1,9 @@
+{"featuredProducts":[  
+    {"featuredPosition":"featured1", "productID":"1", "productName":"The Legend of Zelda: Breath of the Wild", "productDescription":"changed Product 1 description", "system":"Nintendo", "price": "$65.00"}, 
+    {"featuredPosition":"featured2", "productID":"2", "productName":"Mario Kart 8 Deluxe", "productDescription":"Product 2 description", "system":"Nintendo", "price": "$39.85"},
+    {"featuredPosition":"featured3", "productID":"3", "productName":"Fortnite", "productDescription":"Product 3 description", "system":"Nintendo", "price": "$35.99"},
+    {"featuredPosition":"featured4", "productID":"4", "productName":"Carnival Games", "productDescription":"Product 4 description", "system":"Nintendo", "price": "$59.99"}, 
+    {"featuredPosition":"featured5", "productID":"5", "productName":"Lego DC Super-Villains", "productDescription":"Product 5 description", "system":"Nintendo", "price": "$39.99"}, 
+    {"featuredPosition":"featured6", "productID":"6", "productName":"Animal Crossing", "productDescription":"Product 6 description", "system":"Nintendo", "price": "$69.99"}
+    ]}  
+    
